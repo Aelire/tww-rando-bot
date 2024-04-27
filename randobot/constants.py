@@ -81,14 +81,14 @@ MP_PATH = "wwrando-mixed-pools"
 MP_DOWNLOAD = "https://github.com/wooferzfg/wwrando/releases/tag/mixed-pools-build"
 
 RS_PATH = "wwrando-random-settings"
-RS_VERSION = "RS1.4.0-dev3"
-RS_DOWNLOAD = "https://github.com/Aelire/wwrando/releases/tag/RS1.4.0-dev3"
-RS_TRACKER = "https://jaysc.github.io/tww-rando-tracker-rs/"
-RS_DEFAULT = ["random-settings"]
+RS_VERSION = "RS1.4.0"
+RS_DOWNLOAD = "https://github.com/Aelire/wwrando/releases/tag/RS1.4.0"
+RS_TRACKER = "https://wwrtracker.erilea.fr"
+RS_DEFAULT = ["rsl-default"]
 RS_PERMALINKS = OrderedDict([
-    ("random-settings", "UlMxLjQuMC1kZXYzAEEAgQU="),
-]
-)
+    ("rsl-default", "UlMxLjQuMABBAAEc"),
+    ("rsl-guest", "UlMxLjQuMABBAAPwAAE="),
+])
 
 BANNABLE_PRESETS = SPOILER_LOG_DEFAULT
 

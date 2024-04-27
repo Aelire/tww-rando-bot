@@ -609,35 +609,35 @@ class TestHandler(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(mock_send_message.call_count, 4)
         mock_send_message.assert_has_calls([
             call("Rolling seed..."),
-            call("Permalink: PERMA_UlMxLjQuMC1kZXYzAEEAgQU="),
+            call("Permalink: PERMA_UlMxLjQuMABBAAEc"),
             call("Seed Hash: SEED HASH"),
             call(
-                "Please note that this seed uses the Random Settings RS1.4.0-dev3 "
+                "Please note that this seed uses the Random Settings RS1.4.0 "
                 "build of the randomizer. "
-                "Download: https://github.com/Aelire/wwrando/releases/tag/RS1.4.0-dev3 "
-                "Tracker: https://jaysc.github.io/tww-rando-tracker-rs/"
+                "Download: https://github.com/Aelire/wwrando/releases/tag/RS1.4.0 "
+                "Tracker: https://wwrtracker.erilea.fr"
             ),
 
         ])
 
         self.assertEqual(mock_set_raceinfo.call_count, 1)
         mock_set_raceinfo.assert_has_calls([
-            call("PERMA_UlMxLjQuMC1kZXYzAEEAgQU= | Seed Hash: SEED HASH", False, False),
+            call("PERMA_UlMxLjQuMABBAAEc | Seed Hash: SEED HASH", False, False),
         ])
 
         self.assertEqual(mock_generate_seed.call_count, 1)
         mock_generate_seed.assert_has_calls([
             call(
                 "wwrando-random-settings",
-                "UlMxLjQuMC1kZXYzAEEAgQU=",
+                "UlMxLjQuMABBAAEc",
                 "test_user",
                 generate_spoiler_log=True,
                 args_format=ArgFormat.RS14,
             ),
         ])
 
-        self.assertEqual(state["example_permalink"], "UlMxLjQuMC1kZXYzAEEAgQU=")
-        self.assertEqual(state["permalink"], "PERMA_UlMxLjQuMC1kZXYzAEEAgQU=")
+        self.assertEqual(state["example_permalink"], "UlMxLjQuMABBAAEc")
+        self.assertEqual(state["permalink"], "PERMA_UlMxLjQuMABBAAEc")
         self.assertEqual(state["random_settings_spoiler_log_url"], "SPOILER_LOG_URL")
         self.assertEqual(state["random_settings_spoiler_log_unlocked"], False)
         self.assertEqual(state["seed_hash"], "SEED HASH")
